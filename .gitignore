@@ -16,5 +16,8 @@ desktop.ini
 # Logs
 *.log
 
+# Configuration Claude Code locale (non partagée)
+.claude/settings.local.json
+
 # Note : .claude/ est volontairement inclus dans le dépôt
 # (configuration Claude Code partagée avec le projet)
