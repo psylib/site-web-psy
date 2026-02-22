@@ -281,14 +281,14 @@ p { max-width: 68ch; }
 }
 
 .logo-img {
-  height: 64px;
+  height: 128px;
   width: auto;
   display: block;
 }
 
 @media (max-width: 768px) {
   .logo-img {
-    height: 50px;
+    height: 100px;
   }
 }
 
