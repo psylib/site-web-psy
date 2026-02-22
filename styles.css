@@ -732,34 +732,64 @@ p { max-width: 68ch; }
 .avis-card {
   background: var(--clr-white);
   border-radius: var(--radius-lg);
-  padding: var(--space-7);
+  padding: var(--space-8) var(--space-7);
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--clr-border);
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: var(--space-4);
   transition: box-shadow var(--transition), transform var(--transition);
+  position: relative;
 }
 
 .avis-card:hover {
   box-shadow: var(--shadow-md);
-  transform: translateY(-3px);
+  transform: translateY(-4px);
 }
 
-.avis-header {
+.avis-quote {
+  font-family: var(--font-serif);
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--clr-primary-light);
+  margin-bottom: calc(-1 * var(--space-4));
+  user-select: none;
+}
+
+.avis-text {
+  font-size: var(--text-sm);
+  color: var(--clr-text);
+  line-height: 1.75;
+  font-style: italic;
+  flex: 1;
+}
+
+.avis-stars {
+  color: #f5a623;
+  font-size: var(--text-lg);
+  letter-spacing: 2px;
+}
+
+.avis-footer {
   display: flex;
   align-items: center;
   gap: var(--space-3);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--clr-border);
+  width: 100%;
+  justify-content: center;
 }
 
 .avis-avatar {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: var(--clr-primary);
   color: var(--clr-white);
   font-weight: 700;
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -769,6 +799,7 @@ p { max-width: 68ch; }
 .avis-meta {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 2px;
 }
 
@@ -784,27 +815,6 @@ p { max-width: 68ch; }
   gap: 4px;
   font-size: var(--text-xs);
   color: var(--clr-text-muted);
-}
-
-.avis-stars {
-  color: #f5a623;
-  font-size: var(--text-base);
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-}
-
-.avis-date {
-  font-size: var(--text-xs);
-  color: var(--clr-text-muted);
-  font-weight: 400;
-}
-
-.avis-text {
-  font-size: var(--text-sm);
-  color: var(--clr-text-muted);
-  line-height: 1.7;
-  flex: 1;
 }
 
 @media (max-width: 768px) {
