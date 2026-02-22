@@ -276,6 +276,11 @@ p { max-width: 68ch; }
   padding-inline-end: var(--container-pad);
 }
 
+.site-header .container {
+  padding-inline-start: 0;
+  padding-inline-end: var(--container-pad);
+}
+
 .logo {
   text-decoration: none;
   display: flex;
