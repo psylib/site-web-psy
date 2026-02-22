@@ -284,8 +284,8 @@ p { max-width: 68ch; }
   align-items: flex-start;
   flex-shrink: 0;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 12px;
+  left: 12px;
   z-index: 101;
 }
 
