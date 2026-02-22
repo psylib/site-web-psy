@@ -276,21 +276,20 @@ p { max-width: 68ch; }
 .logo {
   text-decoration: none;
   display: flex;
-  flex-direction: column;
-  line-height: 1.2;
+  align-items: center;
+  flex-shrink: 0;
 }
 
-.logo-name {
-  font-family: var(--font-serif);
-  font-size: var(--text-lg);
-  font-weight: 700;
-  color: var(--clr-text);
+.logo-img {
+  height: 48px;
+  width: auto;
+  display: block;
 }
 
-.logo-title {
-  font-size: var(--text-xs);
-  color: var(--clr-text-muted);
-  letter-spacing: .04em;
+@media (max-width: 768px) {
+  .logo-img {
+    height: 38px;
+  }
 }
 
 .primary-nav {
