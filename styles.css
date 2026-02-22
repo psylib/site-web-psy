@@ -270,7 +270,7 @@ p { max-width: 68ch; }
   align-items: center;
   justify-content: space-between;
   gap: var(--space-6);
-  height: 150px;
+  height: 280px;
   padding-block: var(--space-4);
 }
 
@@ -282,14 +282,14 @@ p { max-width: 68ch; }
 }
 
 .logo-img {
-  height: 128px;
+  height: 256px;
   width: auto;
   display: block;
 }
 
 @media (max-width: 768px) {
   .logo-img {
-    height: 100px;
+    height: 200px;
   }
 }
 
@@ -343,7 +343,7 @@ p { max-width: 68ch; }
   .primary-nav {
     display: none;
     position: absolute;
-    top: 150px;
+    top: 280px;
     left: 0;
     right: 0;
     flex-direction: column;
