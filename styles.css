@@ -269,8 +269,8 @@ p { max-width: 68ch; }
 
 .header-inner {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: flex-end;
   gap: var(--space-6);
   height: 300px;
   padding-block: var(--space-4) !important;
@@ -305,7 +305,7 @@ p { max-width: 68ch; }
 
 .primary-nav {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: var(--space-8);
 }
 
