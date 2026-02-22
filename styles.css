@@ -605,6 +605,13 @@ p { max-width: 68ch; }
   align-items: center;
   justify-content: center;
   margin-bottom: var(--space-5);
+  flex-shrink: 0;
+}
+
+.service-icon svg {
+  width: 28px;
+  height: 28px;
+  display: block;
 }
 
 .service-card h3 { margin-bottom: var(--space-3); }
