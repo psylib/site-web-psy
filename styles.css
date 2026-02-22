@@ -273,7 +273,8 @@ p { max-width: 68ch; }
   justify-content: flex-end;
   gap: var(--space-6);
   height: 170px;
-  padding-inline: var(--container-pad);
+  padding-left: 265px;
+  padding-right: var(--container-pad);
 }
 
 .logo {
