@@ -272,7 +272,7 @@ p { max-width: 68ch; }
   align-items: flex-start;
   justify-content: space-between;
   gap: var(--space-6);
-  height: 280px;
+  height: 300px;
   padding-block: var(--space-4) !important;
   padding-inline-start: 0 !important;
   padding-inline-end: var(--container-pad) !important;
@@ -290,14 +290,16 @@ p { max-width: 68ch; }
 }
 
 .logo-img {
-  height: 256px;
+  height: 300px;
   width: auto;
   display: block;
+  border-radius: 0 0 16px 0;
+  box-shadow: 2px 2px 12px rgba(0,0,0,.10);
 }
 
 @media (max-width: 768px) {
   .logo-img {
-    height: 200px;
+    height: 220px;
   }
 }
 
@@ -351,7 +353,7 @@ p { max-width: 68ch; }
   .primary-nav {
     display: none;
     position: absolute;
-    top: 280px;
+    top: 300px;
     left: 0;
     right: 0;
     flex-direction: column;
