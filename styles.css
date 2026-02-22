@@ -313,11 +313,6 @@ p { max-width: 68ch; }
   transition: color var(--transition);
 }
 
-.nav-cta {
-  font-size: var(--text-lg) !important;
-  padding: 0.8em 2em !important;
-}
-
 .primary-nav a:hover { color: var(--clr-primary); }
 
 /* Mobile toggle */
