@@ -263,6 +263,8 @@ p { max-width: 68ch; }
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--clr-border);
+  display: flex;
+  position: relative;
 }
 
 .header-inner {
@@ -279,8 +281,12 @@ p { max-width: 68ch; }
 .logo {
   text-decoration: none;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-shrink: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 101;
 }
 
 .logo-img {
