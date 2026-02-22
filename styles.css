@@ -285,7 +285,7 @@ p { max-width: 68ch; }
   flex-shrink: 0;
   position: absolute;
   top: 12px;
-  left: 12px;
+  left: 28px;
   z-index: 101;
 }
 
@@ -293,8 +293,8 @@ p { max-width: 68ch; }
   height: 300px;
   width: auto;
   display: block;
-  border-radius: 0 0 16px 0;
-  box-shadow: 2px 2px 12px rgba(0,0,0,.10);
+  border-radius: 20px;
+  box-shadow: 3px 4px 16px rgba(0,0,0,.12);
 }
 
 @media (max-width: 768px) {
