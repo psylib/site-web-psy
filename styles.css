@@ -271,14 +271,9 @@ p { max-width: 68ch; }
   justify-content: space-between;
   gap: var(--space-6);
   height: 280px;
-  padding-block: var(--space-4);
-  padding-inline-start: 0;
-  padding-inline-end: var(--container-pad);
-}
-
-.site-header .container {
-  padding-inline-start: 0;
-  padding-inline-end: var(--container-pad);
+  padding-block: var(--space-4) !important;
+  padding-inline-start: 0 !important;
+  padding-inline-end: var(--container-pad) !important;
 }
 
 .logo {
