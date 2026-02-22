@@ -272,6 +272,8 @@ p { max-width: 68ch; }
   gap: var(--space-6);
   height: 280px;
   padding-block: var(--space-4);
+  padding-inline-start: 0;
+  padding-inline-end: var(--container-pad);
 }
 
 .logo {
