@@ -267,7 +267,7 @@ p { max-width: 68ch; }
 
 .header-inner {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: var(--space-6);
   height: 280px;
@@ -295,7 +295,7 @@ p { max-width: 68ch; }
 
 .primary-nav {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--space-8);
 }
 
