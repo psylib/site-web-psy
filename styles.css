@@ -263,8 +263,6 @@ p { max-width: 68ch; }
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--clr-border);
-  display: flex;
-  position: relative;
 }
 
 .header-inner {
