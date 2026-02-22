@@ -305,12 +305,17 @@ p { max-width: 68ch; }
 }
 
 .primary-nav a {
-  font-size: var(--text-sm);
+  font-size: var(--text-lg);
   font-weight: 500;
   color: var(--clr-text);
   text-decoration: none;
   padding-block: var(--space-2);
   transition: color var(--transition);
+}
+
+.nav-cta {
+  font-size: var(--text-lg) !important;
+  padding: 0.8em 2em !important;
 }
 
 .primary-nav a:hover { color: var(--clr-primary); }
