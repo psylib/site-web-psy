@@ -270,18 +270,15 @@ p { max-width: 68ch; }
 .header-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: var(--space-6);
   height: 300px;
-  padding-block: var(--space-4) !important;
-  padding-inline-start: 348px !important;
-  padding-inline-end: var(--container-pad) !important;
+  padding-inline: var(--container-pad);
 }
 
 .logo {
   text-decoration: none;
   display: flex;
-  align-items: flex-start;
   flex-shrink: 0;
   position: absolute;
   top: 12px;
