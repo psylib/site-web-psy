@@ -304,7 +304,7 @@ p { max-width: 68ch; }
   gap: var(--space-6);
 }
 
-.primary-nav a {
+.primary-nav ul a {
   font-size: var(--text-lg);
   font-weight: 500;
   color: var(--clr-text);
@@ -313,7 +313,7 @@ p { max-width: 68ch; }
   transition: color var(--transition);
 }
 
-.primary-nav a:hover { color: var(--clr-primary); }
+.primary-nav ul a:hover { color: var(--clr-primary); }
 
 /* Mobile toggle */
 .nav-toggle {
