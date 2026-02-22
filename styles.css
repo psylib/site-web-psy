@@ -270,11 +270,11 @@ p { max-width: 68ch; }
 .header-inner {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   gap: var(--space-6);
   height: 300px;
   padding-block: var(--space-4) !important;
-  padding-inline-start: 0 !important;
+  padding-inline-start: 348px !important;
   padding-inline-end: var(--container-pad) !important;
 }
 
