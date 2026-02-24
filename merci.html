@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Message envoyé — Claire Clavel, Psychologue Clinicienne</title>
+  <meta name="robots" content="noindex, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .merci-page {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-16) var(--container-pad);
+    }
+    .merci-inner {
+      text-align: center;
+      max-width: 540px;
+    }
+    .merci-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background-color: var(--clr-primary-light);
+      color: var(--clr-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--space-6);
+    }
+    .merci-inner h1 {
+      font-size: clamp(var(--text-2xl), 4vw, var(--text-3xl));
+      margin-bottom: var(--space-4);
+    }
+    .merci-inner p {
+      color: var(--clr-text-muted);
+      margin-bottom: var(--space-4);
+      margin-inline: auto;
+    }
+    .merci-details {
+      background: var(--clr-bg-alt);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6) var(--space-8);
+      margin: var(--space-8) auto;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+    .merci-detail-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-size: var(--text-sm);
+      color: var(--clr-text-muted);
+    }
+    .merci-detail-item svg { color: var(--clr-primary); flex-shrink: 0; }
+    .merci-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+      justify-content: center;
+      margin-top: var(--space-6);
+    }
+  </style>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <a href="/" class="logo" aria-label="Retour à l'accueil — Claire Clavel, Psychologue Clinicienne">
+      <img src="images/Minimalist Logo for Psychologist Claire Clavel.svg"
+           alt="Claire Clavel — Psychologue Clinicienne"
+           class="logo-img" width="160" height="52">
+    </a>
+    <div class="header-inner">
+      <nav class="primary-nav" aria-label="Navigation principale">
+        <ul role="list">
+          <li><a href="/#about">À propos</a></li>
+          <li><a href="/#services">Consultations</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+        <a href="https://www.doctolib.fr/psychologue/seichamps/claire-clavel" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">Prendre rendez-vous</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="merci-page">
+      <div class="merci-inner">
+        <div class="merci-icon" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+        </div>
+        <h1>Message bien reçu !</h1>
+        <p>Merci pour votre message. Claire vous répondra dans les <strong>24h ouvrées</strong>.</p>
+        <p>Si votre demande est urgente, vous pouvez la contacter directement par téléphone.</p>
+
+        <div class="merci-details" aria-label="Informations de contact">
+          <div class="merci-detail-item">
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.23h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <a href="tel:+33610501718">06 10 50 17 18</a>
+          </div>
+          <div class="merci-detail-item">
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+            <span>Lun–Ven : 9h–19h</span>
+          </div>
+          <div class="merci-detail-item">
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span>2 Rue Emmanuel Héré, 54280 Seichamps</span>
+          </div>
+        </div>
+
+        <div class="merci-actions">
+          <a href="/" class="btn btn-primary btn-lg">Retour à l'accueil</a>
+          <a href="https://www.doctolib.fr/psychologue/seichamps/claire-clavel" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-lg">Prendre RDV sur Doctolib</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 Claire Clavel. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
