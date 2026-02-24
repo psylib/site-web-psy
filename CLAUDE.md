@@ -42,7 +42,8 @@ CSS uses custom properties defined in `:root` for the full palette, type scale, 
 - Phone: 06 10 50 17 18
 - Email: claire.clavel.psy@gmail.com
 - Booking: Doctolib link in header and hero CTAs
-- Hours: Lun–Ven 9h–19h
+- Hours: Lun–Ven 9h–17h30
+- GPS: latitude 48.7147, longitude 6.2604
 
 ## SEO / structured data
 
