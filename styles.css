@@ -677,6 +677,55 @@ p { max-width: 68ch; }
   font-size: var(--text-base) !important;
 }
 
+/* MonPsy callout */
+.monpsy-callout {
+  margin-top: var(--space-10);
+  background: var(--clr-primary-light);
+  border: 1px solid var(--clr-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6) var(--space-8);
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.monpsy-callout-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--clr-primary);
+  color: var(--clr-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.monpsy-callout-icon svg { width: 26px; height: 26px; }
+
+.monpsy-callout-body {
+  flex: 1;
+  min-width: 200px;
+}
+
+.monpsy-callout-body strong {
+  display: block;
+  font-size: var(--text-lg);
+  color: var(--clr-text);
+  margin-bottom: var(--space-1);
+}
+
+.monpsy-callout-body p {
+  color: var(--clr-text-muted);
+  font-size: var(--text-sm);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .monpsy-callout { flex-direction: column; text-align: center; }
+}
+
 /* --------------------------------------------------------------------------
    11. Approach / Steps
    -------------------------------------------------------------------------- */
