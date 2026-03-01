@@ -303,10 +303,21 @@ p { max-width: 68ch; }
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: rgba(250,250,248,.92);
+  background-color: rgba(250,250,248,.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--clr-border);
+  display: flex;
+  align-items: center;
+  padding-inline: var(--container-pad);
+  gap: var(--space-6);
+  height: 72px;
+  transition: box-shadow var(--transition);
+}
+
+.site-header.is-scrolled {
+  box-shadow: var(--shadow-md);
+  border-bottom-color: transparent;
 }
 
 .header-inner {
@@ -314,34 +325,28 @@ p { max-width: 68ch; }
   align-items: center;
   justify-content: flex-end;
   gap: var(--space-6);
-  height: 170px;
-  padding-left: 265px;
-  padding-right: var(--container-pad);
+  flex: 1;
 }
 
 .logo {
   text-decoration: none;
   display: flex;
   flex-shrink: 0;
-  position: absolute;
-  top: 12px;
-  left: 28px;
-  z-index: 101;
 }
 
 .logo-img {
-  height: 150px;
-  width: 220px;
-  object-fit: cover;
+  height: 48px;
+  width: auto;
+  object-fit: contain;
   display: block;
-  border-radius: 20px;
-  box-shadow: 3px 4px 16px rgba(0,0,0,.12);
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
 }
 
 @media (max-width: 768px) {
   .logo-img {
-    height: 110px;
-    width: 160px;
+    height: 40px;
+    width: auto;
   }
 }
 
@@ -395,7 +400,7 @@ p { max-width: 68ch; }
   .primary-nav {
     display: none;
     position: absolute;
-    top: 170px;
+    top: 72px;
     left: 0;
     right: 0;
     flex-direction: column;
@@ -506,7 +511,11 @@ p { max-width: 68ch; }
   .hero-inner {
     grid-template-columns: 1fr;
   }
-  .hero-image { display: none; }
+  .hero-photo {
+    aspect-ratio: 3/2;
+    width: 100%;
+    max-width: none;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -1362,7 +1371,41 @@ p { max-width: 68ch; }
 }
 
 /* --------------------------------------------------------------------------
-   16. Print
+   16. Scroll-to-top button
+   -------------------------------------------------------------------------- */
+.scroll-top-btn {
+  position: fixed;
+  bottom: var(--space-8);
+  right: var(--space-6);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--clr-primary);
+  color: var(--clr-white);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  pointer-events: none;
+  transition: background-color var(--transition), transform var(--transition), opacity var(--transition);
+  z-index: 50;
+}
+
+.scroll-top-btn.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.scroll-top-btn:hover {
+  background-color: var(--clr-primary-dark);
+  transform: translateY(-3px);
+}
+
+/* --------------------------------------------------------------------------
+   17. Print
    -------------------------------------------------------------------------- */
 @media print {
   .site-header, .hero-actions, .contact-form-wrapper, .nav-toggle, .btn {

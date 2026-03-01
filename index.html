@@ -32,7 +32,7 @@
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
 
   <!-- Stylesheet (polices auto-hébergées, sans dépendance Google Fonts) -->
-  <link rel="stylesheet" href="styles.css?v=8" />
+  <link rel="stylesheet" href="styles.css?v=9" />
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -600,6 +600,11 @@
     </div>
   </footer>
 
+  <!-- Scroll to top button -->
+  <button class="scroll-top-btn" aria-label="Retour en haut de page">
+    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
   <!-- FAQ accordion script -->
   <script>
     // FAQ accordion
@@ -722,6 +727,21 @@
         });
       });
     }
+
+    // Header shadow on scroll
+    const header = document.querySelector('.site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('is-scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    // Scroll to top button
+    const scrollTopBtn = document.querySelector('.scroll-top-btn');
+    window.addEventListener('scroll', () => {
+      scrollTopBtn.classList.toggle('is-visible', window.scrollY > 400);
+    }, { passive: true });
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 
     // Smooth scroll for anchor links + close mobile nav
     document.querySelectorAll('a[href^="#"]').forEach(a => {
