@@ -311,7 +311,7 @@ p { max-width: 68ch; }
   align-items: center;
   padding-inline: var(--container-pad);
   gap: var(--space-6);
-  height: 80px;
+  height: 88px;
   transition: box-shadow var(--transition);
 }
 
@@ -335,8 +335,8 @@ p { max-width: 68ch; }
 }
 
 .logo-img {
-  height: 64px;
-  width: auto;
+  width: 230px;
+  height: auto;
   object-fit: contain;
   display: block;
   border-radius: 6px;
@@ -345,8 +345,8 @@ p { max-width: 68ch; }
 
 @media (max-width: 768px) {
   .logo-img {
-    height: 52px;
-    width: auto;
+    width: 175px;
+    height: auto;
   }
 }
 
@@ -401,7 +401,7 @@ p { max-width: 68ch; }
   .primary-nav {
     display: none;
     position: absolute;
-    top: 80px;
+    top: 88px;
     left: 0;
     right: 0;
     flex-direction: column;
