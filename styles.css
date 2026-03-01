@@ -372,6 +372,7 @@ p { max-width: 68ch; }
 }
 
 .primary-nav ul a:hover { color: var(--clr-primary); }
+.primary-nav ul a.is-active { color: var(--clr-primary); font-weight: 600; }
 
 /* Mobile toggle */
 .nav-toggle {
@@ -758,10 +759,18 @@ p { max-width: 68ch; }
 }
 
 .faq-answer {
-  padding: 0 var(--space-6) var(--space-5);
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 var(--space-6);
   color: var(--clr-text-muted);
   font-size: var(--text-sm);
   line-height: 1.8;
+  transition: max-height 320ms ease, padding-bottom 320ms ease;
+}
+
+.faq-answer.is-open {
+  max-height: 500px;
+  padding-bottom: var(--space-5);
 }
 
 /* --------------------------------------------------------------------------
@@ -1402,6 +1411,24 @@ p { max-width: 68ch; }
 .scroll-top-btn:hover {
   background-color: var(--clr-primary-dark);
   transform: translateY(-3px);
+}
+
+/* --------------------------------------------------------------------------
+   Animations au scroll (Intersection Observer)
+   -------------------------------------------------------------------------- */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 500ms ease, transform 500ms ease;
+}
+
+[data-animate].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-animate] { opacity: 1; transform: none; transition: none; }
 }
 
 /* --------------------------------------------------------------------------
