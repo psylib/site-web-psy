@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Maison de Santé La Louvière Santé à Seichamps — Claire Clavel, Psychologue</title>
+  <meta name="description" content="Découvrez la future Maison de Santé Pluriprofessionnelle La Louvière Santé à Seichamps (ZAC de la Louvière). Une équipe pluridisciplinaire au service des habitants de Seichamps et du Grand Nancy." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.claire-clavel-psychologue.fr/blog/maison-sante-seichamps.html" />
+  <meta property="og:title" content="La Maison de Santé La Louvière Santé à Seichamps" />
+  <meta property="og:description" content="Une équipe pluridisciplinaire au cœur de Seichamps : médecins, psychologue, kiné, dentistes et bien plus, dans la ZAC de la Louvière." />
+  <meta property="og:image" content="https://www.claire-clavel-psychologue.fr/images/cabinet-bureau.webp" />
+  <meta property="og:url" content="https://www.claire-clavel-psychologue.fr/blog/maison-sante-seichamps.html" />
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../styles.css?v=17" />
+
+  <style>
+    /* ---- Styles spécifiques à cette newsletter ---- */
+    .nl-hero {
+      background: linear-gradient(135deg, var(--clr-primary-dark) 0%, var(--clr-primary) 60%, #5c9080 100%);
+      padding: clamp(var(--space-12), 8vw, var(--space-24)) var(--container-pad);
+      position: relative;
+      overflow: hidden;
+    }
+    .nl-hero::before {
+      content: '';
+      position: absolute;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.05);
+      right: -100px; top: -150px;
+      pointer-events: none;
+    }
+    .nl-hero::after {
+      content: '';
+      position: absolute;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.04);
+      left: 30%; bottom: -80px;
+      pointer-events: none;
+    }
+    .nl-hero-inner {
+      max-width: var(--container-max);
+      margin-inline: auto;
+      position: relative;
+      z-index: 1;
+    }
+    .nl-hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.25);
+      color: rgba(255,255,255,.9);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .35em 1em;
+      border-radius: var(--radius-full);
+      margin-bottom: var(--space-6);
+    }
+    .nl-hero h1 {
+      color: var(--clr-white);
+      font-size: clamp(var(--text-2xl), 4vw, var(--text-5xl));
+      max-width: 18ch;
+      margin-bottom: var(--space-6);
+    }
+    .nl-hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-5);
+      align-items: center;
+    }
+    .nl-hero-meta-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      color: rgba(255,255,255,.75);
+      font-size: var(--text-sm);
+    }
+    .nl-hero-meta-item svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+    /* Stats rapides */
+    .nl-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-4);
+      margin-block: var(--space-12);
+    }
+    .nl-stat-card {
+      background: var(--clr-white);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .nl-stat-value {
+      font-family: var(--font-serif);
+      font-size: var(--text-3xl);
+      font-weight: 700;
+      color: var(--clr-primary);
+      line-height: 1;
+      display: block;
+      margin-bottom: var(--space-2);
+    }
+    .nl-stat-label {
+      font-size: var(--text-xs);
+      color: var(--clr-text-muted);
+      line-height: 1.5;
+    }
+    @media (max-width: 640px) {
+      .nl-stats { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* Équipe grid */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-4);
+      margin-block: var(--space-8);
+    }
+    .team-card {
+      background: var(--clr-white);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5) var(--space-6);
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+    .team-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .team-card--highlight {
+      border-color: var(--clr-primary);
+      background: var(--clr-primary-light);
+    }
+    .team-icon {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--clr-primary-light);
+      color: var(--clr-primary);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .team-card--highlight .team-icon {
+      background: var(--clr-primary);
+      color: var(--clr-white);
+    }
+    .team-icon svg { width: 20px; height: 20px; }
+    .team-info-title {
+      font-weight: 600;
+      font-size: var(--text-sm);
+      color: var(--clr-text);
+      margin-bottom: 2px;
+    }
+    .team-info-sub {
+      font-size: var(--text-xs);
+      color: var(--clr-text-muted);
+    }
+
+    /* Section highlight */
+    .nl-highlight {
+      background: linear-gradient(135deg, var(--clr-primary-light) 0%, #f0ebe3 100%);
+      border-radius: var(--radius-xl);
+      padding: var(--space-10) var(--space-12);
+      margin-block: var(--space-12);
+      position: relative;
+      overflow: hidden;
+    }
+    .nl-highlight::before {
+      content: '"';
+      font-family: var(--font-serif);
+      font-size: 10rem;
+      color: var(--clr-primary-light);
+      position: absolute;
+      top: -1.5rem;
+      left: var(--space-6);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    .nl-highlight-text {
+      font-family: var(--font-serif);
+      font-size: clamp(var(--text-lg), 2.5vw, var(--text-2xl));
+      color: var(--clr-text);
+      line-height: 1.5;
+      position: relative;
+      z-index: 1;
+    }
+    .nl-highlight-author {
+      margin-top: var(--space-4);
+      font-size: var(--text-sm);
+      color: var(--clr-text-muted);
+      position: relative;
+      z-index: 1;
+    }
+    @media (max-width: 640px) {
+      .nl-highlight { padding: var(--space-8); }
+    }
+
+    /* Sources */
+    .sources-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      margin-top: var(--space-6);
+    }
+    .source-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      padding: var(--space-3) var(--space-4);
+      background: var(--clr-white);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      transition: box-shadow var(--transition), border-color var(--transition);
+    }
+    .source-item:hover {
+      box-shadow: var(--shadow-sm);
+      border-color: var(--clr-primary);
+    }
+    .source-item svg { width: 16px; height: 16px; color: var(--clr-primary); flex-shrink: 0; }
+    .source-item span {
+      font-size: var(--text-sm);
+      color: var(--clr-primary);
+      font-weight: 500;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Médecins partenaires pills */
+    .doctors-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-top: var(--space-4);
+    }
+    .doctor-pill {
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--clr-primary-dark);
+      background: var(--clr-primary-light);
+      border: 1px solid rgba(74,124,111,.3);
+      border-radius: var(--radius-full);
+      padding: .35em 1.1em;
+    }
+  </style>
+
+  <!-- JSON-LD Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "La Maison de Santé Pluriprofessionnelle La Louvière Santé ouvrira à Seichamps fin 2026",
+    "description": "Découvrez la Maison de Santé Pluriprofessionnelle La Louvière Santé à Seichamps (ZAC de la Louvière). Une équipe pluridisciplinaire pour les habitants du Grand Nancy.",
+    "author": { "@type": "Person", "name": "Claire Clavel" },
+    "publisher": { "@type": "Organization", "name": "Claire Clavel — Psychologue Clinicienne" },
+    "datePublished": "2025-03-01",
+    "image": "https://www.claire-clavel-psychologue.fr/images/cabinet-bureau.webp",
+    "url": "https://www.claire-clavel-psychologue.fr/blog/maison-sante-seichamps.html"
+  }
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+
+  <!-- HEADER -->
+  <header class="site-header" role="banner">
+    <a href="/" class="logo" aria-label="Retour à l'accueil — Claire Clavel, Psychologue Clinicienne">
+      <img src="../images/Minimalist Logo for Psychologist Claire Clavel.svg"
+           alt="Claire Clavel — Psychologue Clinicienne"
+           class="logo-img" width="160" height="52">
+    </a>
+    <div class="header-inner">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Navigation principale">
+        <ul role="list">
+          <li><a href="/#about">À propos</a></li>
+          <li><a href="/#services">Consultations</a></li>
+          <li><a href="/#approach">Mon approche</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+          <li><a href="/#blog">Blog</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+        <a href="https://www.doctolib.fr/psychologue/seichamps/claire-clavel" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">Prendre rendez-vous</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- HERO NEWSLETTER -->
+    <section class="nl-hero" aria-label="En-tête de l'article">
+      <div class="nl-hero-inner">
+        <span class="nl-hero-tag">
+          <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Maison de santé · Seichamps · ZAC de la Louvière
+        </span>
+        <h1>Une maison de santé pluriprofessionnelle s'installe à Seichamps</h1>
+        <div class="nl-hero-meta">
+          <div class="nl-hero-meta-item">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Mars 2025
+          </div>
+          <div class="nl-hero-meta-item">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            ZAC de la Louvière, 54280 Seichamps
+          </div>
+          <div class="nl-hero-meta-item">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Claire Clavel, Psychologue Clinicienne
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BREADCRUMB -->
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <ol>
+        <li><a href="/">Accueil</a></li>
+        <li><a href="/#blog">Blog</a></li>
+        <li aria-current="page">Maison de santé de Seichamps</li>
+      </ol>
+    </nav>
+
+    <!-- CONTENU -->
+    <article class="blog-article">
+
+      <!-- INTRO -->
+      <div class="article-intro">
+        <p>C'est une nouvelle qui va transformer le quotidien des habitants de Seichamps et des communes voisines. La <strong>Maison de Santé Pluriprofessionnelle La Louvière Santé</strong> est en cours de construction dans la <strong>ZAC de la Louvière</strong>, à deux pas du centre-bourg, avec une <strong>ouverture prévue fin 2026</strong>. Un projet ambitieux porté par une équipe médicale et paramédicale de premier plan — et dans lequel j'ai la chance d'être impliquée en tant que <strong>psychologue clinicienne</strong>.</p>
+      </div>
+
+      <!-- STATS -->
+      <div class="nl-stats" aria-label="Chiffres clés du projet">
+        <div class="nl-stat-card">
+          <span class="nl-stat-value">10+</span>
+          <span class="nl-stat-label">professionnels<br>de santé</span>
+        </div>
+        <div class="nl-stat-card">
+          <span class="nl-stat-value">4</span>
+          <span class="nl-stat-label">médecins<br>généralistes</span>
+        </div>
+        <div class="nl-stat-card">
+          <span class="nl-stat-value">5 165</span>
+          <span class="nl-stat-label">habitants<br>à Seichamps</span>
+        </div>
+        <div class="nl-stat-card">
+          <span class="nl-stat-value">2026</span>
+          <span class="nl-stat-label">ouverture<br>prévue fin 2026</span>
+        </div>
+      </div>
+
+      <h2>Qu'est-ce qu'une maison de santé pluriprofessionnelle ?</h2>
+      <p>Une <strong>Maison de Santé Pluriprofessionnelle (MSP)</strong> regroupe sous un même toit différents professionnels de santé — médecins, infirmiers, kinésithérapeutes, psychologues, dentistes — qui travaillent en coordination. Ce modèle, soutenu par l'<a href="https://www.sante.fr" target="_blank" rel="noopener noreferrer">Agence Régionale de Santé (ARS)</a>, répond à la désertification médicale et offre aux patients un suivi global, cohérent et de proximité.</p>
+      <p>Contrairement à un cabinet de groupe classique, la MSP s'appuie sur un <strong>projet de santé partagé</strong> : les professionnels échangent régulièrement sur les patients, coordonnent les prises en charge et développent des actions de prévention communes.</p>
+
+      <h2>La MSP La Louvière Santé : le projet en détail</h2>
+      <p>Implantée dans la <strong>ZAC de la Louvière</strong> à Seichamps — zone d'activités créée en 1991 et opérationnelle depuis 1998 sur environ 15,85 hectares — la Maison de Santé bénéficie d'un emplacement stratégique à l'entrée nord-est de l'agglomération du Grand Nancy.</p>
+      <p>Le projet a été validé par l'<strong>Agence Régionale de Santé Grand Est</strong> et s'inscrit dans la politique nationale de lutte contre les déserts médicaux, particulièrement prégnants dans les communes périurbaines comme Seichamps.</p>
+
+      <div class="blog-cta-box">
+        <p>En tant que psychologue clinicienne partenaire, je reçois exclusivement les nouveaux patients adressés par les médecins de la future maison de santé. Si vous êtes suivi par l'un de nos médecins partenaires, n'hésitez pas à leur parler de votre besoin d'accompagnement psychologique.</p>
+        <a href="https://www.doctolib.fr/psychologue/seichamps/claire-clavel" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Prendre rendez-vous</a>
+        <a href="/#contact" class="btn-secondary">Me contacter</a>
+      </div>
+
+      <h2>Une équipe pluridisciplinaire complète</h2>
+      <p>La force de ce projet réside dans la diversité et la complémentarité des professionnels réunis. Voici l'équipe qui prendra soin des patients à La Louvière Santé dès son ouverture :</p>
+
+      <div class="team-grid">
+
+        <div class="team-card">
+          <div class="team-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div>
+            <p class="team-info-title">Médecins généralistes</p>
+            <p class="team-info-sub">4 praticiens — dont Dr Châlon, Dr Luzi, Dr Voissement, Dr Charollais</p>
+          </div>
+        </div>
+
+        <div class="team-card team-card--highlight">
+          <div class="team-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10"/><path d="M12 8c-2.2 0-4 1.8-4 4s1.8 4 4 4"/><path d="M18 2l-3 3 3 3"/></svg>
+          </div>
+          <div>
+            <p class="team-info-title">Psychologue clinicienne</p>
+            <p class="team-info-sub">Claire Clavel — anxiété, dépression, TCC, hypnose</p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <div>
+            <p class="team-info-title">Infirmiers</p>
+            <p class="team-info-sub">2 infirmiers — soins courants et suivi chronique</p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div>
+            <p class="team-info-title">Ophtalmologue</p>
+            <p class="team-info-sub">Consultations de vue et suivi ophtalmologique</p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <p class="team-info-title">Kinésithérapeutes</p>
+            <p class="team-info-sub">2 masseurs-kinésithérapeutes — rééducation et bien-être</p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/></svg>
+          </div>
+          <div>
+            <p class="team-info-title">Dentistes</p>
+            <p class="team-info-sub">2 chirurgiens-dentistes — soins dentaires de proximité</p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3h7v7H3z"/><path d="M14 3h7v7h-7z"/><path d="M14 14h7v7h-7z"/><path d="M3 14h7v7H3z"/></svg>
+          </div>
+          <div>
+            <p class="team-info-title">Pharmacien</p>
+            <p class="team-info-sub">Dispensation et coordination au sein de la MSP</p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          </div>
+          <div>
+            <p class="team-info-title">Diététicien</p>
+            <p class="team-info-sub">Accompagnement nutritionnel et prévention</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CITATION -->
+      <div class="nl-highlight">
+        <p class="nl-highlight-text">Faire partie de cette maison de santé, c'est pouvoir offrir aux patients un accompagnement psychologique ancré dans un réseau de soins cohérent. La santé mentale fait pleinement partie de la santé globale.</p>
+        <p class="nl-highlight-author">— Claire Clavel, Psychologue Clinicienne, future partenaire de La Louvière Santé</p>
+      </div>
+
+      <h2>La ZAC de la Louvière : un quartier en plein essor</h2>
+      <p>La <strong>ZAC de la Louvière</strong> est bien plus qu'une simple zone d'activités. Créée en 1991 sous l'égide de la Métropole du Grand Nancy et gérée par <a href="https://www.solorem.com" target="_blank" rel="noopener noreferrer">SOLOREM</a>, cette zone de 15,85 hectares accueille aujourd'hui 129 entreprises et évolue vers un quartier mixte intégrant commerces, services de santé et aménagements paysagers soignés.</p>
+      <p>Parmi les équipements déjà présents : la gendarmerie, la Maison de Retraite médicalisée Les Élieux (75 patients), la Ferme des Fruitiers (boutique agricole), et prochainement (fin 2026) la Maison de Santé Pluriprofessionnelle.</p>
+
+      <h2>Pourquoi la santé mentale a toute sa place dans ce projet</h2>
+      <p>La présence d'une psychologue clinicienne au sein d'une MSP est encore trop rare en France. Pourtant, les études sont formelles : <strong>1 Français sur 5 est touché par un trouble psychique</strong> au cours de sa vie. Dépression, anxiété, burn-out, difficultés relationnelles — ces problématiques arrivent souvent dans le cabinet du médecin généraliste avant tout autre spécialiste.</p>
+      <p>Dans le cadre de la future MSP La Louvière Santé, la collaboration directe entre les médecins généralistes et moi-même permettra une <strong>orientation rapide et adaptée</strong> pour les patients qui en ont besoin, sans les délais habituels liés à la recherche d'un psychologue.</p>
+
+      <h2>Mes médecins partenaires à la MSP</h2>
+      <p>Dans le cadre de cette collaboration, je reçois exclusivement les nouveaux patients adressés par les médecins généralistes de la maison de santé :</p>
+      <div class="doctors-pills">
+        <span class="doctor-pill">Dr Châlon</span>
+        <span class="doctor-pill">Dr Luzi</span>
+        <span class="doctor-pill">Dr Voissement</span>
+        <span class="doctor-pill">Dr Charollais</span>
+      </div>
+      <p style="margin-top: var(--space-4)">Si vous êtes patient de l'un de ces médecins et souhaitez un accompagnement psychologique, parlez-en lors de votre prochaine consultation. Ils pourront m'adresser directement votre dossier.</p>
+
+      <!-- CONCLUSION -->
+      <div class="article-conclusion">
+        <h2>En résumé</h2>
+        <p>La future Maison de Santé Pluriprofessionnelle La Louvière Santé représente un tournant pour l'accès aux soins à Seichamps et dans les communes alentour. En réunissant médecins, spécialistes, paramédicaux et professions de santé mentale sous un même toit, ce projet — dont l'ouverture est prévue <strong>fin 2026</strong> — incarne une vision moderne et humaine de la santé.</p>
+        <p>
+          <a href="https://www.doctolib.fr/psychologue/seichamps/claire-clavel" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Prendre rendez-vous</a>
+          <a href="/#contact" class="btn-secondary">Me contacter</a>
+        </p>
+      </div>
+
+      <!-- SOURCES -->
+      <section aria-labelledby="sources-heading" style="margin-top: var(--space-12); padding-top: var(--space-8); border-top: 1px solid var(--clr-border);">
+        <h2 id="sources-heading" style="font-size: var(--text-xl); margin-bottom: var(--space-2);">Sources &amp; liens utiles</h2>
+        <p style="font-size: var(--text-sm); color: var(--clr-text-muted); margin-bottom: 0;">Pour en savoir plus sur le projet et la commune de Seichamps :</p>
+        <div class="sources-list">
+          <a class="source-item" href="https://www.mairie-seichamps.fr/cadre-de-vie/zac-louviere.htm" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <span>Mairie de Seichamps — ZAC de la Louvière (site officiel)</span>
+          </a>
+          <a class="source-item" href="https://www.maisons-et-poles-de-sante.com/maison-de-sante/grand-est/meurthe-et-moselle/seichamps/maison-de-sante-pluriprofessionnelle-la-louviere-sante-m45501.htm" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <span>MSP La Louvière Santé — Annuaire national des maisons de santé</span>
+          </a>
+          <a class="source-item" href="https://www.sante.fr/maison-de-sante-l6223-3/seichamps/maison-de-sante-pluriprofessionnelle-la-louviere-sante" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <span>Sante.fr — Fiche officielle La Louvière Santé, Seichamps</span>
+          </a>
+          <a class="source-item" href="https://www.solorem.com" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <span>SOLOREM — Aménageur de la ZAC de la Louvière</span>
+          </a>
+          <a class="source-item" href="https://www.mairie-seichamps.fr/" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <span>Mairie de Seichamps — Site officiel de la commune</span>
+          </a>
+        </div>
+      </section>
+
+    </article>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <p class="footer-name">Claire Clavel</p>
+        <p class="footer-subtitle">Psychologue Clinicienne — Seichamps (54)</p>
+        <p class="footer-adeli">N° ADELI : 54 94 1743 0</p>
+      </div>
+      <nav class="footer-nav" aria-label="Navigation pied de page">
+        <ul role="list">
+          <li><a href="/#about">À propos</a></li>
+          <li><a href="/#services">Consultations</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+          <li><a href="/#blog">Blog</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="footer-legal">
+        <a href="../mentions-legales.html">Mentions légales</a>
+        <a href="../confidentialite.html">Politique de confidentialité</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2025 Claire Clavel. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.primary-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const open = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!open));
+        nav.classList.toggle('is-open', !open);
+      });
+    }
+    const header = document.querySelector('.site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('is-scrolled', window.scrollY > 20);
+    }, { passive: true });
+  </script>
+
+</body>
+</html>
