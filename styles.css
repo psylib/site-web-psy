@@ -1660,6 +1660,16 @@ p { max-width: 68ch; }
 .article-related a { text-decoration: none; color: var(--clr-primary-dark); font-weight: 500; font-size: var(--text-sm); }
 .article-related a:hover { color: var(--clr-primary); }
 
+/* Article sources */
+.article-sources { margin-top: var(--space-10); padding-top: var(--space-8); border-top: 1px solid var(--clr-border); }
+.article-sources h2 { font-size: var(--text-lg); margin-top: 0; margin-bottom: var(--space-4); }
+.article-sources ul { padding-left: var(--space-5); display: flex; flex-direction: column; gap: var(--space-2); }
+.article-sources li { font-size: var(--text-sm); color: var(--clr-text-light); line-height: 1.6; }
+.article-sources em { font-style: italic; }
+
+/* Article update date */
+.article-date { font-size: var(--text-sm); color: var(--clr-text-light); margin-top: var(--space-2); }
+
 /* Secondary button */
 .btn-secondary {
   display: inline-flex; align-items: center; gap: var(--space-2);

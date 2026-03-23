@@ -15,6 +15,7 @@
 ## Pages principales
 
 - [Accueil](https://www.claire-clavel-psychologue.fr/): Présentation du cabinet, services, avis patients et prise de rendez-vous
+- [À propos](https://www.claire-clavel-psychologue.fr/a-propos): Parcours, formation, spécialisations et approche thérapeutique de Claire Clavel
 - [Blog](https://www.claire-clavel-psychologue.fr/blog/): Articles sur la santé mentale et actualités du cabinet
 - [Psychologue à Seichamps](https://www.claire-clavel-psychologue.fr/blog/psychologue-seichamps.html): Guide complet sur l'accompagnement psychologique à Seichamps
 - [Psychologue anxiété Nancy](https://www.claire-clavel-psychologue.fr/blog/psychologue-anxiete-nancy.html): Prise en charge de l'anxiété près de Nancy
