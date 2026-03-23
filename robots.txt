@@ -1,4 +1,53 @@
+# === Crawlers standards ===
 User-agent: *
+Allow: /
+
+# === Bots IA de recherche (citent les sources en temps réel) ===
+
+# OpenAI — recherche ChatGPT
+User-agent: OAI-SearchBot
+Allow: /
+
+# OpenAI — navigation utilisateur
+User-agent: ChatGPT-User
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Anthropic Claude — recherche web
+User-agent: Claude-Web
+Allow: /
+
+# Google AI (AI Overviews, Gemini)
+User-agent: Google-Extended
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+
+# === Bots IA d'entraînement (visibilité maximale pour petit site local) ===
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# === Autres moteurs IA ===
+
+User-agent: YouBot
+Allow: /
+
+User-agent: PhindBot
 Allow: /
 
 Sitemap: https://www.claire-clavel-psychologue.fr/sitemap.xml
