@@ -1651,6 +1651,15 @@ p { max-width: 68ch; }
 .article-faq details[open] summary { border-bottom: 1px solid var(--clr-border); }
 .article-faq details p { padding: var(--space-4) var(--space-6) var(--space-5); font-size: var(--text-sm); line-height: 1.8; }
 
+/* Related articles */
+.article-related { margin-top: var(--space-10); padding-top: var(--space-8); border-top: 1px solid var(--clr-border); }
+.article-related h2 { font-size: var(--text-lg); margin-top: 0; margin-bottom: var(--space-4); }
+.article-related ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-3); }
+.article-related li { padding: var(--space-3) var(--space-4); background: var(--clr-bg-alt); border-radius: var(--radius-md); transition: background-color var(--transition); }
+.article-related li:hover { background: var(--clr-primary-light); }
+.article-related a { text-decoration: none; color: var(--clr-primary-dark); font-weight: 500; font-size: var(--text-sm); }
+.article-related a:hover { color: var(--clr-primary); }
+
 /* Secondary button */
 .btn-secondary {
   display: inline-flex; align-items: center; gap: var(--space-2);

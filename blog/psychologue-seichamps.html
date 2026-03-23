@@ -13,7 +13,8 @@
   <meta property="og:title" content="Psychologue à Seichamps (54280) — Claire Clavel" />
   <meta property="og:description" content="Consultez Claire Clavel, psychologue clinicienne à Seichamps près de Nancy. Spécialisée en TCC, hypnose, anxiété, dépression et burn-out. Remboursement Mon Soutien Psy." />
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://claire-clavel-psychologue.fr/blog/psychologue-seichamps" />
+  <meta property="og:url" content="https://www.claire-clavel-psychologue.fr/blog/psychologue-seichamps" />
+  <meta property="og:image" content="https://www.claire-clavel-psychologue.fr/images/cabinet-bureau.webp" />
   <meta property="og:locale" content="fr_FR" />
 
   <!-- Schema.org — Article + BreadcrumbList -->
@@ -437,16 +438,58 @@
         </details>
       </section>
 
+      <!-- Articles connexes -->
+      <nav class="article-related" aria-label="Articles connexes">
+        <h2>Articles connexes</h2>
+        <ul>
+          <li><a href="/blog/psychologue-anxiete-nancy.html">Psychologue pour l'anxiete a Nancy : comprendre, traiter et retrouver la serenite</a></li>
+          <li><a href="/blog/psychologue-burnout-nancy.html">Psychologue burn-out a Nancy : se reconstruire apres l'epuisement professionnel</a></li>
+          <li><a href="/blog/psychologue-depression-nancy.html">Psychologue pour la depression a Nancy : comprendre, consulter, se retablir</a></li>
+          <li><a href="/blog/maison-sante-seichamps.html">Maison de Sante La Louviere Sante a Seichamps</a></li>
+        </ul>
+      </nav>
+
     </article>
   </main>
 
-  <!-- Footer minimal — à remplacer par le footer du site principal -->
-  <footer>
-    <p>
-      Claire Clavel — Psychologue clinicienne — 2 Rue Emmanuel Héré, 54280 Seichamps —
-      <a href="tel:+33610501718">06 10 50 17 18</a> — ADELI 54 94 1743 0
-    </p>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <p class="footer-name">Claire Clavel</p>
+        <p class="footer-subtitle">Psychologue Clinicienne — Seichamps (54)</p>
+        <p class="footer-adeli">N° ADELI : 54 94 1743 0</p>
+      </div>
+      <nav class="footer-nav" aria-label="Navigation pied de page">
+        <ul role="list">
+          <li><a href="/#about">À propos</a></li>
+          <li><a href="/#services">Consultations</a></li>
+          <li><a href="/#contact">Contact</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </nav>
+      <div class="footer-legal">
+        <a href="/mentions-legales.html">Mentions légales</a>
+        <a href="/confidentialite.html">Politique de confidentialité</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 Claire Clavel. Tous droits réservés.</p>
+      </div>
+    </div>
   </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.primary-nav');
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        const open = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!open));
+        nav.classList.toggle('is-open', !open);
+      });
+    }
+  </script>
 
 </body>
 </html>
