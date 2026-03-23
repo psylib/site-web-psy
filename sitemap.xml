@@ -64,4 +64,25 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://www.claire-clavel-psychologue.fr/blog/psychologue-nancy.html</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.claire-clavel-psychologue.fr/blog/psychologue-tcc-nancy.html</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.claire-clavel-psychologue.fr/blog/psychologue-hypnose-nancy.html</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
