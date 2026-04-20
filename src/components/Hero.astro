@@ -1,0 +1,45 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  ctas: { label: string; href: string; variant: 'primary' | 'ghost' }[];
+  backgroundImage: string;
+}
+const { title, subtitle, ctas, backgroundImage } = Astro.props;
+---
+
+<section class="hero" id="hero">
+  <img src={backgroundImage} alt="" class="hero-bg" width="1920" height="1080" />
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="hero-title">{title}</h1>
+    <p class="hero-subtitle">{subtitle}</p>
+    <div class="hero-ctas">
+      {ctas.map(({ label, href, variant }) => (
+        <a href={href} class={`btn btn-${variant}`}
+           {...(href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
+          {label}
+        </a>
+      ))}
+    </div>
+  </div>
+  <div class="hero-scroll-indicator" aria-hidden="true">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+    </svg>
+  </div>
+</section>
+
+<script>
+  const hero = document.querySelector('.hero');
+  const heroBg = document.querySelector('.hero-bg');
+  if (hero && heroBg && window.matchMedia('(hover: hover)').matches) {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        const ratio = 1 - entry.intersectionRatio;
+        (heroBg as HTMLElement).style.transform = `translateY(${ratio * 80}px)`;
+      }
+    }, { threshold: Array.from({ length: 20 }, (_, i) => i / 19) });
+    observer.observe(hero);
+  }
+</script>

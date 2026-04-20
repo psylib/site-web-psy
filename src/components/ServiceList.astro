@@ -1,0 +1,14 @@
+---
+import ServicePill from './ServicePill.astro';
+
+interface Props {
+  items: { label: string; href: string; color?: 'primary' | 'accent' | 'primary-light' }[];
+}
+const { items } = Astro.props;
+---
+
+<div class="service-list">
+  {items.map((item) => (
+    <ServicePill {...item} />
+  ))}
+</div>

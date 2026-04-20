@@ -1,0 +1,28 @@
+---
+interface Props {
+  title: string;
+  slug: string;
+  excerpt: string;
+  date: Date;
+  tag: string;
+  image?: string;
+}
+const { title, slug, excerpt, date, tag, image } = Astro.props;
+const formattedDate = date.toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<article class="blog-card">
+  <a href={`/blog/${slug}`} class="blog-card-link">
+    {image && (
+      <div class="blog-card-image">
+        <img src={image} alt="" width="600" height="340" loading="lazy" />
+      </div>
+    )}
+    <div class="blog-card-body">
+      <span class="blog-card-tag">{tag}</span>
+      <h3 class="blog-card-title">{title}</h3>
+      <p class="blog-card-excerpt">{excerpt}</p>
+      <time class="blog-card-date" datetime={date.toISOString().split('T')[0]}>{formattedDate}</time>
+    </div>
+  </a>
+</article>

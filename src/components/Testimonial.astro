@@ -1,0 +1,26 @@
+---
+interface Props {
+  text: string;
+  author: string;
+  date?: string;
+  rating: number;
+}
+const { text, author, date, rating } = Astro.props;
+---
+
+<article class="testimonial-card">
+  <div class="testimonial-stars" aria-label={`${rating} étoiles sur 5`}>
+    {Array.from({ length: 5 }, (_, i) => (
+      <svg width="20" height="20" viewBox="0 0 20 20" class={i < rating ? 'star-filled' : 'star-empty'} aria-hidden="true">
+        <path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78L10 1z" />
+      </svg>
+    ))}
+  </div>
+  <blockquote class="testimonial-text">
+    <p>{text}</p>
+  </blockquote>
+  <footer class="testimonial-author">
+    <span class="testimonial-name">{author}</span>
+    {date && <time class="testimonial-date">{date}</time>}
+  </footer>
+</article>

@@ -1,0 +1,15 @@
+---
+interface Props {
+  source: string;
+  year: string | number;
+  text: string;
+}
+const { source, year, text } = Astro.props;
+---
+
+<blockquote class="citation">
+  <p class="citation-text">{text}</p>
+  <footer class="citation-source">
+    — {source}, {year}
+  </footer>
+</blockquote>

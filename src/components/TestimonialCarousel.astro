@@ -1,0 +1,16 @@
+---
+import Testimonial from './Testimonial.astro';
+
+interface Props {
+  testimonials: { text: string; author: string; date?: string; rating: number }[];
+}
+const { testimonials } = Astro.props;
+---
+
+<div class="testimonial-carousel" role="region" aria-label="Avis patients">
+  <div class="testimonial-track">
+    {testimonials.map((t) => (
+      <Testimonial {...t} />
+    ))}
+  </div>
+</div>
