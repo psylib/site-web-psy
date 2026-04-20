@@ -22,3 +22,7 @@ desktop.ini
 
 # Note : .claude/ est volontairement inclus dans le dépôt
 # (configuration Claude Code partagée avec le projet)
+
+.vercel
+.worktrees/
+.superpowers/
