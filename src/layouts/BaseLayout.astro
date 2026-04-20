@@ -1,0 +1,107 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  ogType?: string;
+  canonical?: string;
+  noindex?: boolean;
+  jsonLd?: object[];
+}
+
+const {
+  title,
+  description,
+  ogImage = 'https://www.claire-clavel-psychologue.fr/images/cabinet-bureau.webp',
+  ogType = 'website',
+  canonical,
+  noindex = false,
+  jsonLd = [],
+} = Astro.props;
+
+const siteUrl = 'https://www.claire-clavel-psychologue.fr';
+const pageCanonical = canonical || new URL(Astro.url.pathname, siteUrl).href;
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Claire Clavel \u2014 Psychologue Clinicienne",
+  "url": siteUrl + "/",
+  "description": "Site officiel de Claire Clavel, psychologue clinicienne \u00e0 Seichamps (54280), pr\u00e8s de Nancy.",
+  "inLanguage": "fr",
+  "publisher": { "@id": siteUrl + "/#practice" }
+};
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  {noindex
+    ? <meta name="robots" content="noindex, follow" />
+    : <meta name="robots" content="index, follow" />
+  }
+  <link rel="canonical" href={pageCanonical} />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content={ogType} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={pageCanonical} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Claire Clavel Psychologue" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+
+  <!-- JSON-LD WebSite -->
+  <script type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)} />
+
+  <!-- JSON-LD supplementaire -->
+  {jsonLd.map((ld) => (
+    <script type="application/ld+json" set:html={JSON.stringify(ld)} />
+  ))}
+
+  <slot name="head" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+  <Header currentPath={Astro.url.pathname} />
+  <slot />
+  <Footer />
+  <script>
+    const reveals = document.querySelectorAll('[data-reveal]');
+    if (reveals.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => entry.target.classList.add('revealed'), i * 100);
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+      reveals.forEach((el) => observer.observe(el));
+    } else {
+      reveals.forEach((el) => el.classList.add('revealed'));
+    }
+  </script>
+</body>
+</html>
