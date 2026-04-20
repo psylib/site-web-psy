@@ -1,0 +1,300 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ServiceList from '../components/ServiceList.astro';
+import TestimonialCarousel from '../components/TestimonialCarousel.astro';
+import FAQ from '../components/FAQ.astro';
+import ContactForm from '../components/ContactForm.astro';
+
+const siteUrl = 'https://www.claire-clavel-psychologue.fr';
+
+const medicalBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "@id": siteUrl + "/#practice",
+  "name": "Claire Clavel — Psychologue Clinicienne",
+  "description": "Cabinet de psychologie clinique à Seichamps (54280), près de Nancy. Spécialiste en TCC et hypnose thérapeutique. Consultations adultes et adolescents.",
+  "url": siteUrl + "/",
+  "telephone": "+33610501718",
+  "email": "claire.clavel.psy@gmail.com",
+  "image": siteUrl + "/images/cabinet-bureau.webp",
+  "priceRange": "65€–70€",
+  "currenciesAccepted": "EUR",
+  "paymentAccepted": "Chèque, Espèces, Virement",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2 Rue Emmanuel Héré",
+    "addressLocality": "Seichamps",
+    "postalCode": "54280",
+    "addressRegion": "Grand Est",
+    "addressCountry": "FR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 48.7147,
+    "longitude": 6.2604
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "17:30" }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.5",
+    "reviewCount": "8",
+    "bestRating": "5"
+  },
+  "hasCredential": {
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "Master 2 Psychologie Clinique",
+    "recognizedBy": { "@type": "Organization", "name": "Université de Lorraine" }
+  },
+  "medicalSpecialty": "Psychiatric",
+  "isAcceptingNewPatients": true
+};
+
+const faqItems = [
+  {
+    question: "Quelle est la différence entre un psychologue et un psychiatre ?",
+    answer: "Le psychologue est spécialiste du fonctionnement psychique et utilise la parole et les thérapies. Il ne peut pas prescrire de médicaments. Le psychiatre est médecin ; il peut diagnostiquer et prescrire un traitement médicamenteux. Les deux peuvent travailler en complémentarité."
+  },
+  {
+    question: "Les séances sont-elles remboursées ?",
+    answer: "Oui, dans le cadre du dispositif MonPsy, l'Assurance Maladie rembourse jusqu'à 12 séances par an — sans qu'il soit nécessaire de passer par votre médecin traitant. Vous pouvez prendre rendez-vous directement chez un psychologue conventionné MonPsy. En dehors de ce dispositif, de nombreuses mutuelles proposent un forfait annuel. Je fournis des reçus pour faciliter vos demandes de remboursement."
+  },
+  {
+    question: "Combien de séances sont nécessaires ?",
+    answer: "Cela dépend entièrement de chaque personne et de sa demande. Certaines personnes trouvent ce qu'elles cherchent en une seule séance, d'autres ont besoin d'un suivi sur quelques semaines ou plusieurs mois. Nous évaluons cela ensemble, à votre rythme, sans engagement."
+  },
+  {
+    question: "La confidentialité est-elle garantie ?",
+    answer: "Oui, absolument. Je suis soumise au secret professionnel (article 226-13 du Code pénal). Tout ce que vous me confiez reste strictement confidentiel, sauf situations exceptionnelles prévues par la loi (danger imminent pour vous ou autrui)."
+  },
+  {
+    question: "Qu'est-ce que le dispositif MonPsy ?",
+    answer: "MonPsy est un dispositif de l'Assurance Maladie permettant le remboursement de jusqu'à 12 séances de psychologie par an. Il n'est plus nécessaire de passer par un médecin : vous pouvez prendre rendez-vous directement chez un psychologue conventionné. Les tarifs sont de 50 € pour la première séance et 50 € pour chaque séance de suivi (11 au maximum). Aucun dépassement d'honoraires n'est autorisé."
+  },
+  {
+    question: "Comment se déroule une téléconsultation ?",
+    answer: "La téléconsultation se déroule via une plateforme de visioconférence sécurisée — le lien vous est envoyé par e-mail avant la séance. Vous avez besoin d'un ordinateur, d'une tablette ou d'un smartphone avec caméra, et d'un endroit calme et confidentiel."
+  },
+  {
+    question: "L'hypnose thérapeutique est-elle efficace ?",
+    answer: "L'hypnose thérapeutique est reconnue pour son efficacité dans la gestion du stress, des phobies, de certains traumatismes et douleurs chroniques. Contrairement aux idées reçues, vous restez conscient et en contrôle tout au long de la séance."
+  },
+  {
+    question: "Faut-il une ordonnance pour consulter un psychologue ?",
+    answer: "Non, aucune ordonnance n'est nécessaire pour consulter un psychologue. Depuis la mise à jour du dispositif MonPsy, il n'est d'ailleurs plus obligatoire de passer par un médecin pour bénéficier du remboursement — vous pouvez prendre rendez-vous directement."
+  }
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer
+    }
+  }))
+};
+
+const services = [
+  { label: "Anxiété et stress", href: "/blog/psychologue-anxiete-nancy", color: "primary" as const },
+  { label: "Burn-out", href: "/blog/psychologue-burnout-nancy", color: "accent" as const },
+  { label: "Dépression", href: "/blog/psychologue-depression-nancy", color: "primary-light" as const },
+  { label: "Troubles du sommeil", href: "/blog/psychologue-anxiete-nancy", color: "primary" as const },
+  { label: "TCC", href: "/blog/psychologue-tcc-nancy", color: "accent" as const },
+  { label: "Hypnose thérapeutique", href: "/blog/psychologue-hypnose-nancy", color: "primary-light" as const },
+  { label: "Traumatismes", href: "/blog/psychologue-anxiete-nancy", color: "primary" as const },
+  { label: "Estime de soi", href: "/blog/psychologue-depression-nancy", color: "accent" as const },
+];
+
+const testimonials = [
+  {
+    text: "J'ai consulté Mme Clavel pour une séance d'hypnose, sans grande conviction. Cela m'a complètement recentré sur le fait de mieux gérer ma charge mentale. Mme Clavel est une professionnelle bienveillante, à l'écoute et qui a les mots justes pour rebooster dès la 1ère séance.",
+    author: "Ezra D.",
+    date: "Mars 2026",
+    rating: 5
+  },
+  {
+    text: "Excellente psychologue, qui vous accorde sans hésiter le temps, la douceur et la bienveillance nécessaires pour vous aider. Depuis que j'ai commencé à voir Mme Clavel, je me sens véritablement soutenue et écoutée.",
+    author: "English Tea Time",
+    date: "Janvier 2024",
+    rating: 5
+  },
+  {
+    text: "Écoute, empathie et valorisation. Claire Clavel est chaleureuse et très attentive à la parole. La sienne est rassurante, positive et professionnelle. Son aide est précieuse.",
+    author: "Pascale R.",
+    date: "Février 2022",
+    rating: 5
+  },
+  {
+    text: "Professionnelle très avenante et douce… On se sent en confiance, de très bons conseils.",
+    author: "Aly Web",
+    date: "Décembre 2021",
+    rating: 5
+  }
+];
+---
+
+<BaseLayout
+  title="Claire Clavel — Psychologue Clinicienne à Seichamps près de Nancy (54)"
+  description="Claire Clavel, psychologue clinicienne à Seichamps (54280). TCC, hypnose thérapeutique, anxiété, dépression, burn-out. Conventionnée MonPsy. RDV Doctolib."
+  jsonLd={[medicalBusinessJsonLd, faqJsonLd]}
+>
+  <main id="main-content">
+    <!-- HERO -->
+    <Hero
+      title="Claire Clavel"
+      subtitle="Psychologue clinicienne à Seichamps, près de Nancy. Accompagnement bienveillant et personnalisé pour retrouver votre équilibre."
+      backgroundImage="/images/cabinet-bureau.webp"
+      ctas={[
+        { label: "Prendre rendez-vous", href: "https://www.doctolib.fr/psychologue/seichamps/claire-clavel", variant: "primary" },
+        { label: "Découvrir le cabinet", href: "#services", variant: "ghost" }
+      ]}
+    />
+
+    <!-- TRUST BAR -->
+    <section class="trust-bar" data-reveal>
+      <div class="container">
+        <div class="trust-bar-items">
+          <div class="trust-bar-item">
+            <strong>4,5/5</strong> sur Google (8 avis)
+          </div>
+          <div class="trust-bar-item">
+            <strong>65 €</strong> / séance (50 min)
+          </div>
+          <div class="trust-bar-item">
+            Conventionnée <strong>MonPsy</strong>
+          </div>
+          <div class="trust-bar-item">
+            MSP <strong>Seichamps</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOTICE -->
+    <div class="container" data-reveal>
+      <div class="notice">
+        <p><strong>Nouveaux patients acceptés.</strong> Prenez rendez-vous directement sur Doctolib ou par téléphone au 06 10 50 17 18.</p>
+      </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section id="services" class="section" data-reveal>
+      <div class="container">
+        <h2 class="section-title">Comment je peux vous aider</h2>
+        <ServiceList items={services} />
+      </div>
+    </section>
+
+    <!-- MONPSY -->
+    <section class="section section-alt" data-reveal>
+      <div class="container">
+        <h2 class="section-title">Dispositif Mon Soutien Psy</h2>
+        <p style="text-align: center; max-width: 600px; margin: 0 auto var(--space-xl); color: var(--clr-text-muted);">
+          Séances remboursées par l'Assurance Maladie, sans passer par votre médecin traitant.
+        </p>
+        <div class="monpsy-stats">
+          <div class="monpsy-stat">
+            <span class="monpsy-stat-value">50 €</span>
+            <span class="monpsy-stat-label">par séance</span>
+          </div>
+          <div class="monpsy-stat">
+            <span class="monpsy-stat-value">12</span>
+            <span class="monpsy-stat-label">séances / an</span>
+          </div>
+          <div class="monpsy-stat">
+            <span class="monpsy-stat-value">0 €</span>
+            <span class="monpsy-stat-label">dépassement</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- APPROCHE -->
+    <section class="section" data-reveal>
+      <div class="container">
+        <h2 class="section-title">Mon approche thérapeutique</h2>
+        <div class="approach-grid">
+          <div class="approach-card">
+            <svg class="approach-card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="24" cy="24" r="20"/><path d="M16 24h16M24 16v16"/>
+            </svg>
+            <h3>TCC</h3>
+            <p>Thérapies cognitivo-comportementales validées scientifiquement, recommandées par la HAS pour l'anxiété et la dépression.</p>
+          </div>
+          <div class="approach-card">
+            <svg class="approach-card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M24 4c0 11-9 20-20 20 11 0 20 9 20 20 0-11 9-20 20-20-11 0-20-9-20-20z"/>
+            </svg>
+            <h3>Hypnose</h3>
+            <p>Hypnose thérapeutique clinique évaluée par l'INSERM, pour le stress, les phobies et les traumatismes.</p>
+          </div>
+          <div class="approach-card">
+            <svg class="approach-card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 24c0-6.6 5.4-12 12-12s12 5.4 12 12"/><path d="M24 12v24M18 30l6 6 6-6"/>
+            </svg>
+            <h3>Sur-mesure</h3>
+            <p>Chaque accompagnement est unique. Écoute, bienveillance et adaptation aux besoins spécifiques de chaque patient.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEMOIGNAGES -->
+    <section class="section section-alt" data-reveal>
+      <div class="container">
+        <h2 class="section-title">Ce que disent mes patients</h2>
+        <TestimonialCarousel testimonials={testimonials} />
+      </div>
+    </section>
+
+    <!-- A PROPOS TEASER -->
+    <section class="section" data-reveal>
+      <div class="container" style="text-align: center; max-width: 700px;">
+        <h2 class="section-title">À propos</h2>
+        <p style="margin-bottom: var(--space-xl); color: var(--clr-text-muted); line-height: 1.8;">
+          Diplômée d'un Master 2 en Psychologie Clinique (Université de Lorraine), j'exerce depuis plus de 10 ans. Mon parcours en milieu hospitalier et en CMP m'a permis d'acquérir une solide expérience clinique au service d'un accompagnement rigoureux et bienveillant.
+        </p>
+        <a href="/a-propos" class="btn btn-primary">En savoir plus</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section section-alt" data-reveal>
+      <div class="container">
+        <h2 class="section-title">Questions fréquentes</h2>
+        <FAQ items={faqItems} />
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section section-dark">
+      <div class="container">
+        <h2 class="section-title">Contactez-moi</h2>
+        <div class="contact-grid">
+          <ContactForm />
+          <div class="contact-info">
+            <h3>Informations pratiques</h3>
+            <ul class="contact-info-list">
+              <li>2 Rue Emmanuel Héré, 54280 Seichamps</li>
+              <li><a href="tel:+33610501718">06 10 50 17 18</a></li>
+              <li><a href="mailto:claire.clavel.psy@gmail.com">claire.clavel.psy@gmail.com</a></li>
+              <li>Lun–Ven 9h–17h30</li>
+              <li>65 € / séance (50 min) — Hypnose : 70 € (60 min)</li>
+            </ul>
+            <a href="https://www.doctolib.fr/psychologue/seichamps/claire-clavel"
+               target="_blank" rel="noopener noreferrer"
+               class="btn btn-primary" style="margin-top: var(--space-xl);">
+              Prendre rendez-vous sur Doctolib
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

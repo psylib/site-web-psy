@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Page introuvable \u2014 Claire Clavel, Psychologue Clinicienne"
+  description="La page demand\u00e9e n'existe pas."
+  noindex={true}
+>
+  <main id="main-content">
+    <div class="error-content container">
+      <h1>404</h1>
+      <p>D\u00e9sol\u00e9e, la page que vous cherchez n'existe pas ou a \u00e9t\u00e9 d\u00e9plac\u00e9e.</p>
+      <div class="error-actions">
+        <a href="/" class="btn btn-primary">Retour \u00e0 l'accueil</a>
+        <a href="https://www.doctolib.fr/psychologue/seichamps/claire-clavel"
+           target="_blank" rel="noopener noreferrer"
+           class="btn btn-ghost" style="border-color: var(--clr-primary); color: var(--clr-primary);">
+          Prendre rendez-vous
+        </a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

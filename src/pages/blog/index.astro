@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+const blogJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Blog \u2014 Claire Clavel, Psychologue Clinicienne",
+  "description": "Articles et ressources sur la psychologie, l'anxi\u00e9t\u00e9, la d\u00e9pression, le burn-out, la TCC et l'hypnose th\u00e9rapeutique.",
+  "url": "https://www.claire-clavel-psychologue.fr/blog",
+  "author": {
+    "@type": "Person",
+    "name": "Claire Clavel"
+  },
+  "publisher": { "@id": "https://www.claire-clavel-psychologue.fr/#practice" }
+};
+---
+
+<BaseLayout
+  title="Blog & Ressources \u2014 Claire Clavel, Psychologue Clinicienne"
+  description="Articles sur la psychologie, l'anxi\u00e9t\u00e9, la d\u00e9pression, le burn-out, les TCC et l'hypnose. Ressources par Claire Clavel, psychologue \u00e0 Seichamps pr\u00e8s de Nancy."
+  jsonLd={[blogJsonLd]}
+>
+  <main id="main-content">
+    <section class="hero-banner">
+      <div class="container">
+        <h1>Blog & Ressources</h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="blog-grid">
+          {posts.map((post) => (
+            <BlogCard
+              title={post.data.title}
+              slug={post.id}
+              excerpt={post.data.description}
+              date={post.data.date}
+              tag={post.data.tags[0] || 'psychologie'}
+              image={post.data.image}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
